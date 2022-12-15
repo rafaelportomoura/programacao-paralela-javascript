@@ -1,0 +1,15 @@
+all: true
+check-coverage: true
+extension:
+  - ".ts"
+include:
+  - "src/**/*.ts"
+exclude:
+  - "**/*.spec.ts"
+  - "**/*.js"
+  - "src/server.ts"
+settings:
+  lines: 100
+  branches: 100
+  functions: 100
+  statements: 100

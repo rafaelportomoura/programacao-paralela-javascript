@@ -1,0 +1,3 @@
+{
+  "*.ts":   ["yarn lint --cache --fix", yarn format]
+}

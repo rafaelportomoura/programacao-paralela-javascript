@@ -1,0 +1,63 @@
+{
+  "name": "programacao-paralela-javascript",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "repository": "git@github.com:rafaelportomoura/typescript-boilerplate.git",
+  "author": "rafael_.moura <rafael.moura.dev.29@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "prepare": "husky install",
+    "build": "tsc",
+    "lint": "eslint --ext .js,.ts . --max-warnings=0",
+    "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\"",
+    "dev": "cross-env NODE_ENV=DEVELOPMENT ts-node-dev src/index.ts",
+    "prod": "cross-env NODE_ENV=PRODUCTION node dist/index.js",
+    "test": "cross-env NODE_ENV=test ts-mocha",
+    "test:cov": "cross-env NODE_ENV=test nyc ts-mocha",
+    "concurrently": "concurrently",
+    "git-cz": "git-cz",
+    "lint-staged": "lint-staged",
+    "commitizen": "commitizen"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/chai": "^4.3.3",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/joi": "14.3.3",
+    "@types/mocha": "^9.1.1",
+    "@types/morgan": "^1.9.3",
+    "@types/sinon": "^10.0.13",
+    "@typescript-eslint/eslint-plugin": "^5.36.2",
+    "@typescript-eslint/parser": "^5.36.2",
+    "chai": "^4.3.6",
+    "commitizen": "^4.2.6",
+    "concurrently": "^7.6.0",
+    "cross-env": "^7.0.3",
+    "cz-conventional-changelog": "3.3.0",
+    "devmoji": "^2.3.0",
+    "eslint": "^8.23.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-typescript": "^3.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-snakecasejs": "^2.2.0",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.1.0",
+    "mocha": "^10.0.0",
+    "nyc": "^15.1.0",
+    "prettier": "^2.7.1",
+    "semantic-commit-emoji": "^0.6.2",
+    "sinon": "^14.0.0",
+    "ts-mocha": "^10.0.0",
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.8.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}

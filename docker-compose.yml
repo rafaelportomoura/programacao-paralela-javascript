@@ -1,0 +1,26 @@
+version: '3.1'
+
+volumes:
+  backend:
+    
+services:
+  
+  backend:
+    image: flf/backend-dev
+    build:
+      context: backend
+      dockerfile: Dockerfile
+    user: "node"
+    env_file: 
+      - back.env
+    entrypoint: ["sh", "-c"]
+    command: ["yarn && yarn dev"]
+    volumes:
+      - ./src:/home/node/app
+    ports:
+      - 3000:3000
+    networks:
+      - backend
+
+networks:
+  backend:
