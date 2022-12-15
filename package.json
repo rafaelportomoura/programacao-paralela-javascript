@@ -8,11 +8,11 @@
   "private": true,
   "scripts": {
     "prepare": "husky install",
-    "build": "tsc",
-    "lint": "eslint --ext .js,.ts . --max-warnings=0",
+    "build": "tsc --pretty",
+    "lint": "eslint --ext .ts . --max-warnings=0",
     "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\"",
     "dev": "cross-env NODE_ENV=DEVELOPMENT ts-node-dev src/index.ts",
-    "prod": "cross-env NODE_ENV=PRODUCTION node dist/index.js",
+    "prod": "cross-env NODE_ENV=PRODUCTION node -e 'console.log(require(\"/home/node/app/dist/index.js\").soma(1,2))'",
     "test": "cross-env NODE_ENV=test ts-mocha",
     "test:cov": "cross-env NODE_ENV=test nyc ts-mocha",
     "concurrently": "concurrently",
@@ -20,7 +20,9 @@
     "lint-staged": "lint-staged",
     "commitizen": "commitizen"
   },
-  "dependencies": {},
+  "dependencies": {
+    "cross-env": "^7.0.3"
+  },
   "devDependencies": {
     "@types/chai": "^4.3.3",
     "@types/cors": "^2.8.12",
@@ -34,7 +36,6 @@
     "chai": "^4.3.6",
     "commitizen": "^4.2.6",
     "concurrently": "^7.6.0",
-    "cross-env": "^7.0.3",
     "cz-conventional-changelog": "3.3.0",
     "devmoji": "^2.3.0",
     "eslint": "^8.23.0",

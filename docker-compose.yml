@@ -1,26 +1,26 @@
 version: '3.1'
 
 volumes:
-  backend:
-    
+  example_src:
 services:
   
-  backend:
-    image: flf/backend-dev
+  example:
+    image: typescript-boilerplate
     build:
-      context: backend
+      context: .
       dockerfile: Dockerfile
     user: "node"
-    env_file: 
-      - back.env
+    # env_file: 
+    #   - back.env
     entrypoint: ["sh", "-c"]
-    command: ["yarn && yarn dev"]
+    command: ["yarn prod"]
     volumes:
-      - ./src:/home/node/app
+      - ./src:/home/node/app/src
+
     ports:
       - 3000:3000
     networks:
-      - backend
+      - example
 
 networks:
-  backend:
+  example:

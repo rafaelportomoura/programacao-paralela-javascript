@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import soma from '../src/index';
+import { soma } from '../src/index';
 
 describe('Index', () => {
   it('SUCCESS: Soma', () => {
