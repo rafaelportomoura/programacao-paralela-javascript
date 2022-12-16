@@ -10,10 +10,10 @@ services:
       context: .
       dockerfile: Dockerfile
     user: "node"
-    # env_file: 
-    #   - back.env
+    env_file: 
+      - back.env
     entrypoint: ["sh", "-c"]
-    command: ["yarn prod"]
+    command: ["node -e 'console.log(require(\"/home/node/app/dist/index.js\").soma(1,2))'"]
     volumes:
       - ./src:/home/node/app/src
 

@@ -12,7 +12,7 @@
     "lint": "eslint --ext .ts . --max-warnings=0",
     "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\"",
     "dev": "cross-env NODE_ENV=DEVELOPMENT ts-node-dev src/index.ts",
-    "prod": "cross-env NODE_ENV=PRODUCTION node -e 'console.log(require(\"/home/node/app/dist/index.js\").soma(1,2))'",
+    "prod": "docker-compose up --build",
     "test": "cross-env NODE_ENV=test ts-mocha",
     "test:cov": "cross-env NODE_ENV=test nyc ts-mocha",
     "concurrently": "concurrently",
@@ -21,7 +21,6 @@
     "commitizen": "commitizen"
   },
   "dependencies": {
-    "cross-env": "^7.0.3"
   },
   "devDependencies": {
     "@types/chai": "^4.3.3",
@@ -34,6 +33,7 @@
     "@typescript-eslint/eslint-plugin": "^5.36.2",
     "@typescript-eslint/parser": "^5.36.2",
     "chai": "^4.3.6",
+    "cross-env": "^7.0.3",
     "commitizen": "^4.2.6",
     "concurrently": "^7.6.0",
     "cz-conventional-changelog": "3.3.0",
