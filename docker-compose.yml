@@ -16,7 +16,6 @@ services:
     command: ["node -e 'console.log(require(\"/home/node/app/dist/index.js\").soma(1,2))'"]
     volumes:
       - ./src:/home/node/app/src
-
     ports:
       - 3000:3000
     networks:
